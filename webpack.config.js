@@ -7,7 +7,7 @@ var stylusLoader = ExtractTextPlugin.extract({fallback: 'style-loader', use: 'cs
 module.exports = {
   entry: [
     'react-hot-loader/patch',
-    'webpack-dev-server/client?http://localhost:3000',
+    'webpack-dev-server/client?http://localhost:8080',
     'webpack/hot/only-dev-server',
     './entry.js'
   ],
@@ -56,7 +56,7 @@ module.exports = {
   ]},
   devServer: {
     host: 'localhost',
-    port: 3000,
+    port: 8080,
     historyApiFallback: true,
     hot: true,
   },

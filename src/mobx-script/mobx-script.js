@@ -138,13 +138,27 @@ export default class scripts{
     this.db.remove({_id:toJS(this.scripts[i]._id, false)}, {}, err => { if(err) console.log(err)});
     this.scripts.splice(i, 1);
   }
+
+  
+  /* ------------------------------------------------------
+
+    Export Script
+
+  ------------------------------------------------------ */
+
+  @action exportScript(){
+    console.log('Exporting....', toJS(this.titlePage))
+  }
+
+
+
   /* ------------------------------------------------------
 
     Save Script
 
   ------------------------------------------------------ */
   @action saveScript(){
-    // console.log('saving....', toJS(this.titlePage))
+    console.log('saving....', toJS(this.titlePage))
     // this.lastSave = Date.now();
     this.db.update({_id: toJS(this.lastSave, false)}, {$set: {content: toJS(this.paragraphs, false), pages: toJS(this.pages, false), titlePage: toJS(this.titlePage, false)}}, {}, (err) => {
       if(err)console.log(err)
